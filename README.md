@@ -30,6 +30,18 @@ curl 127.0.0.1:8080/
 
 ### given configuration file
 
+You need to uncomment `http`, instead socket should be commented-out.
+
+```
+http = 127.0.0.1:3031
+``` 
+
+```
+# socket = :3031
+```
+
+then run it by the following command
+
 ```
 uwsgi --ini infra/app/uwsgi.ini
 ```
