@@ -38,6 +38,48 @@ uwsgi --ini infra/app/uwsgi.ini
 curl 127.0.0.1:8080/
 ```
 
+## nginx
+
+have uwsgi up and running beforehand
+
+```
+uwsgi --ini infra/app/uwsgi.ini
+```
+
+
+with the following command
+
+```
+mkdir -p var/{log/nginx,run}
+```
+
+have local var directory structured like the following
+
+```
+var
+├── log
+│   └── nginx
+└── run
+```
+
+have the nginx-server up and running using local configuration
+
+```
+nginx -p $PWD -c infra/nginx/default.conf
+```
+
+```
+curl 127.0.0.1:8080/
+```
+
+
+kill the nginx-server process by kill command
+
+```
+kill $(cat var/run/nginx.pid)
+```
+
+
 ## Reference
 - https://www.python.ambitious-engineer.com/archives/1959#uWSGI
 - https://www.python.org/dev/peps/pep-0333/
