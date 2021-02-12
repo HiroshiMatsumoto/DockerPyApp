@@ -18,6 +18,8 @@ it should return "test"
 
 ## uWSGI
 
+### configured by command options
+
 ```
 uwsgi --wsgi-file infra/app/app.py --callable app --http 127.0.0.1:8080
 ```
@@ -26,9 +28,15 @@ uwsgi --wsgi-file infra/app/app.py --callable app --http 127.0.0.1:8080
 curl 127.0.0.1:8080/
 ```
 
+### given configuration file
 
+```
+uwsgi --ini infra/app/uwsgi.ini
+```
 
-
+```
+curl 127.0.0.1:8080/
+```
 
 ## Reference
 - https://www.python.ambitious-engineer.com/archives/1959#uWSGI
