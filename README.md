@@ -1,5 +1,8 @@
 # Python App on Docker + Nginx + uWsgi + Flask
 
+The following instructions show building/running python-app on each
+Flask, uWsgi, Nginx, Docker servers.
+
 ## Flask
 
 simple flask execution by following command
@@ -90,6 +93,9 @@ kill the nginx-server process by kill command
 ```
 kill $(cat var/run/nginx.pid)
 ```
+
+## docker
+
 
 
 ## Reference
