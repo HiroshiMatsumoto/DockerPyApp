@@ -3,14 +3,15 @@ version: '3.7'
 services:
   app:
     # uwsgi + flask env
-    # docker image base files
     build: ./infra/app
     tty: true
     ports:
       - 3031:3031
     volumes:
-      # python app files
       - ./infra/app:/usr/src/app/
+      # - ./log:/var/log/uwsgi
+    # logging:
+    #   driver: "json-file" # defaults if not specified
   web:
     # nginx server
     image: nginx:1.18-alpine
